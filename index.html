@@ -1,10 +1,157 @@
 <!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>Sydney Groves</title></head>
-  <body>
-    <h1>Sydney Groves</h1>
-    <p>Virginia Tech • Computational Neuroscience & Computer Engineering</p>
-    <p>Email: your@email.com</p>
-    <p>GitHub: <a href="https://github.com/sydneygro14">sydneygro14</a></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sydney Groves</title>
+
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --line: rgba(255,255,255,0.12);
+      --link: #7aa7ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(122,167,255,0.25), transparent 55%),
+                  radial-gradient(900px 700px at 90% 10%, rgba(255,122,179,0.18), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 56px 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 44px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .pillrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 26px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--muted);
+      background: rgba(0,0,0,0.12);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 720px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: rgba(0,0,0,0.10);
+    }
+
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      margin-top: 18px;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Sydney Groves</h1>
+      <p class="subtitle">Virginia Tech • Computational Neuroscience &amp; Computer Engineering</p>
+
+      <div class="pillrow">
+        <div class="pill">Embedded Systems</div>
+        <div class="pill">AI + Neuroengineering</div>
+        <div class="pill">BCIs</div>
+        <div class="pill">RF / LoRa (NASA SLI)</div>
+      </div>
+
+      <div class="grid">
+        <div class="item">
+          <div class="label">Email</div>
+          <div><a href="mailto:sydneyg14@vt.edu">sydneyg14@vt.edu</a></div>
+        </div>
+
+        <div class="item">
+          <div class="label">GitHub</div>
+          <div><a href="https://github.com/sydneygro14" target="_blank" rel="noreferrer">github.com/sydneygro14</a></div>
+        </div>
+
+        <div class="item">
+          <div class="label">Interests</div>
+          <div>Edge systems, sensing, data pipelines, human-in-the-loop control</div>
+        </div>
+
+        <div class="item">
+          <div class="label">Currently</div>
+          <div>Building hardware + software projects across neuroscience and embedded engineering</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        Last updated: <span id="date"></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("date").textContent =
+      new Date().toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  </script>
+</body>
 </html>
